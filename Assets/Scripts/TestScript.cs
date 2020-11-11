@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestScript : MonoBehaviour
 {
 
-    public int conflict = 3;
+    public int conflict = 2;
 
     // Start is called before the first frame update
     void Start()
