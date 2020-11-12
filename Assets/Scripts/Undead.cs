@@ -15,6 +15,9 @@ public class Undead : MonoBehaviour
     [SerializeField] private int count = 100;
     [SerializeField] private int level = 0;
     [SerializeField] private Sprite sprite;
+    
+    public float undeadTimeSecond = 1f;
+    float elapsedTime;
 
     public TextMeshProUGUI TMP_costsText;
 
@@ -36,10 +39,16 @@ public class Undead : MonoBehaviour
     {
         
     }
-    public Button createUndead;
+
     public void CreateUndead() {
         count += 1;
+        currentCurrency -= 10;
         Debug.Log("Count:"+count);
+    }
+
+    public void UndeadProduction() {
+        productionRate += 1;
+        Debug.Log("Count:"+productionRate);
     }
 
     public void CreateUndeadButton() {
