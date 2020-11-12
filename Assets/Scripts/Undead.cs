@@ -22,6 +22,8 @@ public class Undead : MonoBehaviour
     float elapsedTime;
 
     public TextMeshProUGUI TMP_statusText;
+    public TextMeshProUGUI TMP_costsText;
+
 
     public int Count
     {
@@ -35,6 +37,7 @@ public class Undead : MonoBehaviour
     public void DisplayTexts()
     {
         this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{level})";
+        this.TMP_costsText.text = $"Zombie costs: {this.cost} souls";
     }
     
     // Start is called before the first frame update
