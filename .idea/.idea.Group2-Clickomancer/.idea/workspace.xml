@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
+        <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
       </list>
     </option>
   </component>
@@ -62,6 +63,7 @@
       <workItem from="1605170615063" duration="617000" />
       <workItem from="1605171377167" duration="749000" />
       <workItem from="1605174155136" duration="6000" />
+      <workItem from="1605176086918" duration="1213000" />
     </task>
     <servers />
   </component>
