@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GetOfflineCurrency : MonoBehaviour
 {
@@ -8,9 +8,9 @@ public class GetOfflineCurrency : MonoBehaviour
     //Placeholders, replace with currency-hook-in-references later
     public int placeholderSouls = 5;
 
-    public Text offlineTimeText;
+    public TextMeshProUGUI offlineTimeText;
     public string offlineTimeTextString;
-    public Text offlineProductionText;
+    public TextMeshProUGUI offlineProductionText;
     public string offlineProductionTextString;
     
     
