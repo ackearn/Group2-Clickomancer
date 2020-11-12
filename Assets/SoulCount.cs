@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class SoulCount : MonoBehaviour
 {
     public TMPro.TMP_Text soulText;
-    public double souls;
-
-    public void Start()
+    public int souls;
+    public int soulsPerClick = 1;
+    public int Souls
     {
-        souls = 0;
+        get => PlayerPrefs.GetInt("Souls", 0);
+        set => PlayerPrefs.SetInt("Souls", value);
     }
-
     public void Update()
     {
-        soulText.text = "Souls:  " + souls;
+        soulText.text = "Souls:" + Souls;
     }
 
     public void Click()
     {
-        souls += 1;
+        Souls += soulsPerClick;
     }
 }
