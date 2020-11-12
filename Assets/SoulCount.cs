@@ -1,7 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
 public class SoulCount : MonoBehaviour
 {
     public TMPro.TMP_Text soulText;
@@ -15,5 +13,10 @@ public class SoulCount : MonoBehaviour
     public void Update()
     {
         soulText.text = "Souls:  " + souls;
+    }
+
+    public void Click()
+    {
+        souls += 1;
     }
 }
