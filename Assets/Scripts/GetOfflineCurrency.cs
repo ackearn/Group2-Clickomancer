@@ -9,9 +9,12 @@ public class GetOfflineCurrency : MonoBehaviour
     //Placeholders, replace with currency-hook-in-references later
     public int placeholderSouls = 5;
 
-    public DateTime OfflineTime
+    
+    
+    
+    public string OfflineTime
     {
-        get => Convert.ToDateTime(PlayerPrefs.GetString("SoulsEarnedOffline", "0"));
+        get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
         private set => PlayerPrefs.SetString("SoulsEarnedOffline", value.ToString());
     }
     
@@ -22,11 +25,15 @@ public class GetOfflineCurrency : MonoBehaviour
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
 
+        Debug.Log(currentTime);
+        Debug.Log(offlineTime);
+        Debug.Log(interval);
+        
         Debug.Log(interval.TotalSeconds * placeholderSouls);
     }
 
     private void OnApplicationQuit()
     {
-        OfflineTime = DateTime.Now;
+        OfflineTime = DateTime.Now.ToString();
     }
 }
