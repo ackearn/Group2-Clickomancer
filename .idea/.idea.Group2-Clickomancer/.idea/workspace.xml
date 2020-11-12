@@ -14,6 +14,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
       </list>
     </option>
   </component>
@@ -57,6 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605099533988</updated>
       <workItem from="1605099542663" duration="1057000" />
+      <workItem from="1605170615063" duration="617000" />
+      <workItem from="1605171377167" duration="749000" />
     </task>
     <servers />
   </component>
