@@ -21,13 +21,13 @@ public class Undead : MonoBehaviour
     
     public void DisplayTexts()
     {
-        this.TMP_costsText.text = $"Add {name} for {cost} souls";
+        this.TMP_costsText.text = $"{count}x {name} = {productionRate} souls/second (Level{level})";
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        DisplayTexts();
     }
 
     // Update is called once per frame
