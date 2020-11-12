@@ -35,4 +35,13 @@ public class Undead : MonoBehaviour
     {
         
     }
+    public Button createUndead;
+    public void CreateUndead() {
+        count += 1;
+        Debug.Log("Count:"+count);
+    }
+
+    public void CreateUndeadButton() {
+        CreateUndead();
+    }
 }
