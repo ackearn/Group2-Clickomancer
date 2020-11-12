@@ -37,18 +37,28 @@ public class Undead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateProduction();
     }
 
+    void UpdateProduction() {
+        this.elapsedTime += Time.deltaTime;
+        if (this.elapsedTime >= this.undeadTimeSecond) {
+            UndeadProduction();
+            this.elapsedTime -= this.undeadTimeSecond;
+        }
+    }
+    
     public void CreateUndead() {
         count += 1;
-        currentCurrency -= 10;
+        currentCurrency -= cost;
+        Debug.Log("CurrentCurrency:"+currentCurrency);
         Debug.Log("Count:"+count);
     }
 
     public void UndeadProduction() {
-        productionRate += 1;
-        Debug.Log("Count:"+productionRate);
+        //TODO: Make Mathf.Pow to multiply total productionRate with upgradeMultiplier
+        currentCurrency += this.productionRate * this.count;
+        Debug.Log("Production Rate:"+productionRate);
     }
 
     public void CreateUndeadButton() {
