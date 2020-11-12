@@ -8,12 +8,13 @@ using UnityEngine.PlayerLoop;
 public class Undead : MonoBehaviour
 {
     //Placeholder
+    public SoulCount soulRef;
     public int currentCurrency = 250;
 
     [SerializeField] private string name = "Zombie";
     [SerializeField] private int cost = 100;
-    [SerializeField] private int productionRate = 1;
-    [SerializeField] private int count = 100;
+    public int productionRate = 1;
+    [SerializeField] private int count = 0;
     [SerializeField] private int level = 0;
     [SerializeField] private Sprite sprite;
     
@@ -22,11 +23,18 @@ public class Undead : MonoBehaviour
 
     public TextMeshProUGUI TMP_statusText;
 
-    public bool IsAffordable => currentCurrency >= this.cost; 
+    public int Count
+    {
+        get => PlayerPrefs.GetInt("Owned"+name, 0);
+        set => PlayerPrefs.SetInt("Owned"+name, value);
+    }
+    
+    
+    public bool IsAffordable => soulRef.Souls >= this.cost; 
     
     public void DisplayTexts()
     {
-        this.TMP_statusText.text = $"{count}x {name} = {productionRate * count} souls/second (Level{level})";
+        this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{level})";
     }
     
     // Start is called before the first frame update
@@ -38,6 +46,7 @@ public class Undead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayTexts();
         UpdateProduction();
     }
 
@@ -54,16 +63,16 @@ public class Undead : MonoBehaviour
         {
             return;
         }
-        count += 1;
-        currentCurrency -= cost;
+        Count += 1;
+        soulRef.Souls -= cost;
         DisplayTexts();
-        Debug.Log("CurrentCurrency:"+currentCurrency);
-        Debug.Log("Count:"+count);
+        Debug.Log("CurrentCurrency:"+soulRef.Souls);
+        Debug.Log("Count:"+Count);
     }
 
     public void UndeadProduction() {
         //TODO: Make Mathf.Pow to multiply total productionRate with upgradeMultiplier
-        currentCurrency += this.productionRate * this.count;
+        soulRef.Souls += this.productionRate * this.Count;
         Debug.Log("Production Rate:"+productionRate);
     }
 
