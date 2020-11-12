@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetOfflineCurrency : MonoBehaviour
 {
@@ -9,7 +8,10 @@ public class GetOfflineCurrency : MonoBehaviour
     //Placeholders, replace with currency-hook-in-references later
     public int placeholderSouls = 5;
 
-    
+    public Text offlineTimeText;
+    public string offlineTimeTextString;
+    public Text offlineProductionText;
+    public string offlineProductionTextString;
     
     
     public string OfflineTime
@@ -24,12 +26,12 @@ public class GetOfflineCurrency : MonoBehaviour
         var currentTime = DateTime.Now;
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
-
-        Debug.Log(currentTime);
-        Debug.Log(offlineTime);
-        Debug.Log(interval);
         
-        Debug.Log(interval.TotalSeconds * placeholderSouls);
+        int totalOfflineProduction = Mathf.RoundToInt((float) interval.TotalSeconds) * placeholderSouls;
+        
+        offlineTimeText.text = $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
+        offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";
+
     }
 
     private void OnApplicationQuit()
