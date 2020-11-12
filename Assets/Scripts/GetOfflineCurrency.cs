@@ -1,17 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GetOfflineCurrency : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    //Placeholders, replace with currency-hook-in-references later
+    public int placeholderSouls;
+
+    public int PlaceholderSouls
+    {
+        get => PlayerPrefs.GetInt("SoulsEarned", 0);
+        private set => PlayerPrefs.SetInt("SoulsEarned", value);
+    }
+    
+    
+    private void Awake()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnApplicationQuit()
     {
         
     }
