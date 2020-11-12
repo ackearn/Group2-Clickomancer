@@ -6,11 +6,16 @@ public class GetOfflineCurrency : MonoBehaviour
 {
     
     //Placeholders, replace with currency-hook-in-references later
+ 
+    [Header("Drag and Drop references here")]
     public SoulCount soulsRef;
     public Undead zombieRef;
 
+    [Header("Text reference for Offline Time")]
     public TextMeshProUGUI offlineTimeText;
     public string offlineTimeTextString;
+
+    [Header("Text reference for Offline Produced Souls text")]
     public TextMeshProUGUI offlineProductionText;
     public string offlineProductionTextString;
     

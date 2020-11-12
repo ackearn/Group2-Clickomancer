@@ -7,8 +7,16 @@ using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour
 {
-    //Placeholder
+    
+
+    
+    [Header("Drag and Drop references here")]
     public SoulCount soulRef;
+    public TextMeshProUGUI TMP_statusText;
+    public TextMeshProUGUI TMP_costsText;
+    [SerializeField] private Sprite sprite;
+
+    [Header("Configurable values")]
     public int currentCurrency = 250;
 
     [SerializeField] private string name = "Zombie";
@@ -16,14 +24,10 @@ public class Undead : MonoBehaviour
     public int productionRate = 1;
     [SerializeField] private int count = 0;
     [SerializeField] private int level = 0;
-    [SerializeField] private Sprite sprite;
+
     
     public float undeadTimeSecond = 1f;
     float elapsedTime;
-
-    public TextMeshProUGUI TMP_statusText;
-    public TextMeshProUGUI TMP_costsText;
-
 
     public int Count
     {

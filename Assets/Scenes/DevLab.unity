@@ -424,7 +424,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673052960
 GameObject:
@@ -456,16 +456,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulRef: {fileID: 2006190522}
+  TMP_statusText: {fileID: 1453093325}
+  TMP_costsText: {fileID: 1581375901}
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   currentCurrency: 250
   name: Zombie
   cost: 100
   productionRate: 1
   count: 0
   level: 0
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   undeadTimeSecond: 1
-  TMP_statusText: {fileID: 1453093325}
-  TMP_costsText: {fileID: 1581375901}
 --- !u!4 &673052962
 Transform:
   m_ObjectHideFlags: 0
@@ -474,11 +474,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673052960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.34894, y: 189.82735, z: -13.384236}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862871182
 GameObject:
@@ -1033,7 +1033,7 @@ GameObject:
   - component: {fileID: 1479179683}
   - component: {fileID: 1479179682}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Buy Zombie Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 1753267675}
   - component: {fileID: 1753267674}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Click to get Souls Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1647,7 +1647,7 @@ GameObject:
   - component: {fileID: 2006190520}
   - component: {fileID: 2006190522}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SoulCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,7 +1683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2006190522
 MonoBehaviour:

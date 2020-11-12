@@ -3,7 +3,11 @@ using UnityEngine.UI;
 
 public class SoulCount : MonoBehaviour
 {
+    
+    [Header("Drag and Drop reference here")]
     public TMPro.TMP_Text soulText;
+    
+    [Header("Configurable values")]
     public int souls;
     public int soulsPerClick = 1;
     public int Souls
