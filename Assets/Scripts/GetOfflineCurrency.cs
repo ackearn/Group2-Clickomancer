@@ -7,7 +7,7 @@ public class GetOfflineCurrency : MonoBehaviour
 {
     
     //Placeholders, replace with currency-hook-in-references later
-    //public int placeholderSouls;
+    public int placeholderSouls = 5;
 
     public DateTime OfflineTime
     {
@@ -19,8 +19,10 @@ public class GetOfflineCurrency : MonoBehaviour
     private void Awake()
     {
         var currentTime = DateTime.Now;
-        
+        var offlineTime = Convert.ToDateTime(OfflineTime);
+        var interval = currentTime - offlineTime;
 
+        Debug.Log(interval.TotalSeconds * placeholderSouls);
     }
 
     private void OnApplicationQuit()
