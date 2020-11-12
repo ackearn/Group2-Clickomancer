@@ -8,11 +8,11 @@ public class Undead : MonoBehaviour
     //Placeholder
     public int currentCurrency = 250;
 
-    [SerializeField] private string name;
-    [SerializeField] private int cost;
-    [SerializeField] private int productionRate;
-    [SerializeField] private int count;
-    [SerializeField] private int level;
+    [SerializeField] private string name = "Zombie";
+    [SerializeField] private int cost = 100;
+    [SerializeField] private int productionRate = 5;
+    [SerializeField] private int count = 100;
+    [SerializeField] private int level = 0;
     [SerializeField] private Sprite sprite;
 
     public TextMeshProUGUI TMP_costsText;
