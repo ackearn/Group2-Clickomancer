@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Undead : MonoBehaviour
 
     [SerializeField] private string name = "Zombie";
     [SerializeField] private int cost = 100;
-    [SerializeField] private int productionRate = 5;
+    [SerializeField] private int productionRate = 1;
     [SerializeField] private int count = 100;
     [SerializeField] private int level = 0;
     [SerializeField] private Sprite sprite;
@@ -19,13 +20,13 @@ public class Undead : MonoBehaviour
     public float undeadTimeSecond = 1f;
     float elapsedTime;
 
-    public TextMeshProUGUI TMP_costsText;
+    public TextMeshProUGUI TMP_statusText;
 
     public bool IsAffordable => currentCurrency >= this.cost; 
     
     public void DisplayTexts()
     {
-        this.TMP_costsText.text = $"{count}x {name} = {productionRate} souls/second (Level{level})";
+        this.TMP_statusText.text = $"{count}x {name} = {productionRate * count} souls/second (Level{level})";
     }
     
     // Start is called before the first frame update
@@ -55,6 +56,7 @@ public class Undead : MonoBehaviour
         }
         count += 1;
         currentCurrency -= cost;
+        DisplayTexts();
         Debug.Log("CurrentCurrency:"+currentCurrency);
         Debug.Log("Count:"+count);
     }
