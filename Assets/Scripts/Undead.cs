@@ -48,7 +48,11 @@ public class Undead : MonoBehaviour
         }
     }
     
-    public void CreateUndead() {
+    private void CreateUndead() {
+        if (!IsAffordable)
+        {
+            return;
+        }
         count += 1;
         currentCurrency -= cost;
         Debug.Log("CurrentCurrency:"+currentCurrency);
