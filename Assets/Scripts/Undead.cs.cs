@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Undead.cs : MonoBehaviour
+public class Undead : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
