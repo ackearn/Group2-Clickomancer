@@ -7,9 +7,6 @@ using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour
 {
-    
-
-    
     [Header("Drag and Drop references here")]
     public SoulCount soulRef;
     public TextMeshProUGUI TMP_statusText;
@@ -26,7 +23,7 @@ public class Undead : MonoBehaviour
     [SerializeField] private int level = 0;
 
     
-    public float undeadTimeSecond = 1f;
+    public float undeadProductionPerSecond = 1f;
     float elapsedTime;
 
     public int Count
@@ -59,9 +56,9 @@ public class Undead : MonoBehaviour
 
     void UpdateProduction() {
         this.elapsedTime += Time.deltaTime;
-        if (this.elapsedTime >= this.undeadTimeSecond) {
+        if (this.elapsedTime >= this.undeadProductionPerSecond) {
             UndeadProduction();
-            this.elapsedTime -= this.undeadTimeSecond;
+            this.elapsedTime -= this.undeadProductionPerSecond;
         }
     }
     

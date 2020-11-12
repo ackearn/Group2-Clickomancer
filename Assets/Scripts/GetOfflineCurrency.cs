@@ -4,9 +4,6 @@ using TMPro;
 
 public class GetOfflineCurrency : MonoBehaviour
 {
-    
-    //Placeholders, replace with currency-hook-in-references later
- 
     [Header("Drag and Drop references here")]
     public SoulCount soulsRef;
     public Undead zombieRef;
@@ -25,24 +22,29 @@ public class GetOfflineCurrency : MonoBehaviour
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
         private set => PlayerPrefs.SetString("SoulsEarnedOffline", value.ToString());
     }
-
-
+    
     private void Awake()
+    {
+        CalculateOfflineProduction();
+    }
+    
+    private void OnApplicationQuit()
+    {
+        OfflineTime = DateTime.Now.ToString();
+    }
+    
+    private void CalculateOfflineProduction()
     {
         var currentTime = DateTime.Now;
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
-        
-        int totalOfflineProduction = Mathf.RoundToInt((float) interval.TotalSeconds) * (zombieRef.productionRate * zombieRef.Count);
+
+        int totalOfflineProduction =
+            Mathf.RoundToInt((float) interval.TotalSeconds) * (zombieRef.productionRate * zombieRef.Count);
         soulsRef.Souls += totalOfflineProduction;
 
-        offlineTimeText.text = $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
+        offlineTimeText.text =
+            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
         offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";
-
-    }
-
-    private void OnApplicationQuit()
-    {
-        OfflineTime = DateTime.Now.ToString();
     }
 }
