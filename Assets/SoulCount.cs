@@ -7,7 +7,7 @@ public class SoulCount : MonoBehaviour
 
     public void Start()
     {
-        souls = 1;
+        souls = 0;
     }
 
     public void Update()
